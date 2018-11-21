@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5611f2b109a0489bad51675344d2a9c0" Name="Diagram1">
+        <EntityTypeShape EntityType="RentACarModel.Adres" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentACarModel.Arac" Width="1.5" PointX="6" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentACarModel.Marka" Width="1.5" PointX="3.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentACarModel.Model" Width="1.5" PointX="3.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentACarModel.Odemeler" Width="1.5" PointX="3" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentACarModel.Onay" Width="1.5" PointX="3" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentACarModel.Resim" Width="1.5" PointX="8.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentACarModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentACarModel.UyeBilgi" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentACarModel.Yolculuk" Width="1.5" PointX="3" PointY="19.25" IsExpanded="true" />
+        <AssociationConnector Association="RentACarModel.Adres_UyeBilgi_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="RentACarModel.FK_Arac_Marka" ManuallyRouted="false" />
+        <AssociationConnector Association="RentACarModel.FK_Arac_Model" ManuallyRouted="false" />
+        <AssociationConnector Association="RentACarModel.FK_Arac_UyeBilgi" ManuallyRouted="false" />
+        <AssociationConnector Association="RentACarModel.FK_Resim_Arac" ManuallyRouted="false" />
+        <AssociationConnector Association="RentACarModel.FK_Model_Marka" ManuallyRouted="false" />
+        <AssociationConnector Association="RentACarModel.FK_Odemeler_UyeBilgi" ManuallyRouted="false" />
+        <AssociationConnector Association="RentACarModel.FK_Onaylama_UyeBilgi" ManuallyRouted="false" />
+        <AssociationConnector Association="RentACarModel.FK_Yolculuk_UyeBilgi" ManuallyRouted="false" />
+        <AssociationConnector Association="RentACarModel.FK_Yolculuk_UyeBilgi1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

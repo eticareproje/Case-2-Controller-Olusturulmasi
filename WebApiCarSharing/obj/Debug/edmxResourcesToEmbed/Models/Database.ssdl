@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RentACarModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Adres">
+    <Key>
+      <PropertyRef Name="AdresId" />
+    </Key>
+    <Property Name="AdresId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="AdresTanimi" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Adres" Type="nvarchar" MaxLength="180" Nullable="false" />
+    <Property Name="Ulke" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Sehir" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Ilce" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Tel" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Arac">
+    <Key>
+      <PropertyRef Name="AracId" />
+    </Key>
+    <Property Name="AracId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="XKoordinat" Type="nvarchar" MaxLength="50" />
+    <Property Name="YKoordinat" Type="nvarchar" MaxLength="50" />
+    <Property Name="MarkaId" Type="int" Nullable="false" />
+    <Property Name="ModelId" Type="int" Nullable="false" />
+    <Property Name="Ucret" Type="float" />
+    <Property Name="KM" Type="int" />
+    <Property Name="Yakit" Type="varchar" MaxLength="50" />
+    <Property Name="Kasa" Type="varchar" MaxLength="5" />
+    <Property Name="Yil" Type="varchar" MaxLength="4" />
+    <Property Name="Vites" Type="varchar" MaxLength="15" />
+    <Property Name="Aciklama" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Goruntulenme" Type="int" Nullable="false" />
+    <Property Name="OrtalamaPuan" Type="tinyint" Nullable="false" />
+    <Property Name="AracDurum" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Marka">
+    <Key>
+      <PropertyRef Name="MarkaId" />
+    </Key>
+    <Property Name="MarkaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AracMarka" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Model">
+    <Key>
+      <PropertyRef Name="ModelId" />
+    </Key>
+    <Property Name="ModelId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MarkaId" Type="int" Nullable="false" />
+    <Property Name="ModelAd" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Odemeler">
+    <Key>
+      <PropertyRef Name="OdemeId" />
+    </Key>
+    <Property Name="OdemeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="YolculukId" Type="int" Nullable="false" />
+    <Property Name="Fiyat" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Onay">
+    <Key>
+      <PropertyRef Name="OnayId" />
+    </Key>
+    <Property Name="OnayId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="EhliyetResimYoluOn" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="EhliyetResimYoluArka" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="AdminOnay" Type="varchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Resim">
+    <Key>
+      <PropertyRef Name="ResimId" />
+    </Key>
+    <Property Name="ResimId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AracId" Type="int" Nullable="false" />
+    <Property Name="ResimYol" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Onay" Type="varchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="UyeBilgi">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Apikey" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Role" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Adi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Soyadi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DogumTarihi" Type="date" Nullable="false" />
+    <Property Name="Sigara" Type="nchar" MaxLength="5" />
+    <Property Name="ResimYol" Type="nvarchar" MaxLength="250" />
+    <Property Name="EMail" Type="nvarchar" MaxLength="130" Nullable="false" />
+    <Property Name="Sifre" Type="nvarchar" MaxLength="16" Nullable="false" />
+    <Property Name="TC" Type="nchar" MaxLength="11" Nullable="false" />
+    <Property Name="Telefon" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="UyeKayitTarihi" Type="date" Nullable="false" />
+    <Property Name="Deneyim" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="YapilanYolculukSayisi" Type="smallint" Nullable="false" />
+    <Property Name="MusteriPuan" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Yolculuk">
+    <Key>
+      <PropertyRef Name="YolculukId" />
+    </Key>
+    <Property Name="YolculukId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AracSahipId" Type="int" Nullable="false" />
+    <Property Name="KiralayanId" Type="int" Nullable="false" />
+    <Property Name="AracId" Type="int" Nullable="false" />
+    <Property Name="Yorum" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <Association Name="Adres-UyeBilgi-UserId">
+    <End Role="UyeBilgi" Type="Self.UyeBilgi" Multiplicity="1" />
+    <End Role="Adres" Type="Self.Adres" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UyeBilgi">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Adres">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Arac_Marka">
+    <End Role="Marka" Type="Self.Marka" Multiplicity="1" />
+    <End Role="Arac" Type="Self.Arac" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marka">
+        <PropertyRef Name="MarkaId" />
+      </Principal>
+      <Dependent Role="Arac">
+        <PropertyRef Name="MarkaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Arac_Model">
+    <End Role="Model" Type="Self.Model" Multiplicity="1" />
+    <End Role="Arac" Type="Self.Arac" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Model">
+        <PropertyRef Name="ModelId" />
+      </Principal>
+      <Dependent Role="Arac">
+        <PropertyRef Name="ModelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Arac_UyeBilgi">
+    <End Role="UyeBilgi" Type="Self.UyeBilgi" Multiplicity="1" />
+    <End Role="Arac" Type="Self.Arac" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UyeBilgi">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Arac">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Model_Marka">
+    <End Role="Marka" Type="Self.Marka" Multiplicity="1" />
+    <End Role="Model" Type="Self.Model" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marka">
+        <PropertyRef Name="MarkaId" />
+      </Principal>
+      <Dependent Role="Model">
+        <PropertyRef Name="MarkaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Odemeler_UyeBilgi">
+    <End Role="UyeBilgi" Type="Self.UyeBilgi" Multiplicity="1" />
+    <End Role="Odemeler" Type="Self.Odemeler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UyeBilgi">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Odemeler">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Onaylama_UyeBilgi">
+    <End Role="UyeBilgi" Type="Self.UyeBilgi" Multiplicity="1" />
+    <End Role="Onay" Type="Self.Onay" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UyeBilgi">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Onay">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Resim_Arac">
+    <End Role="Arac" Type="Self.Arac" Multiplicity="1" />
+    <End Role="Resim" Type="Self.Resim" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Arac">
+        <PropertyRef Name="AracId" />
+      </Principal>
+      <Dependent Role="Resim">
+        <PropertyRef Name="ResimId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yolculuk_UyeBilgi">
+    <End Role="UyeBilgi" Type="Self.UyeBilgi" Multiplicity="1" />
+    <End Role="Yolculuk" Type="Self.Yolculuk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UyeBilgi">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Yolculuk">
+        <PropertyRef Name="KiralayanId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yolculuk_UyeBilgi1">
+    <End Role="UyeBilgi" Type="Self.UyeBilgi" Multiplicity="1" />
+    <End Role="Yolculuk" Type="Self.Yolculuk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UyeBilgi">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Yolculuk">
+        <PropertyRef Name="AracSahipId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RentACarModelStoreContainer">
+    <EntitySet Name="Adres" EntityType="Self.Adres" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Arac" EntityType="Self.Arac" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Marka" EntityType="Self.Marka" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Model" EntityType="Self.Model" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Odemeler" EntityType="Self.Odemeler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Onay" EntityType="Self.Onay" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Resim" EntityType="Self.Resim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UyeBilgi" EntityType="Self.UyeBilgi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Yolculuk" EntityType="Self.Yolculuk" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="Adres-UyeBilgi-UserId" Association="Self.Adres-UyeBilgi-UserId">
+      <End Role="UyeBilgi" EntitySet="UyeBilgi" />
+      <End Role="Adres" EntitySet="Adres" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Arac_Marka" Association="Self.FK_Arac_Marka">
+      <End Role="Marka" EntitySet="Marka" />
+      <End Role="Arac" EntitySet="Arac" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Arac_Model" Association="Self.FK_Arac_Model">
+      <End Role="Model" EntitySet="Model" />
+      <End Role="Arac" EntitySet="Arac" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Arac_UyeBilgi" Association="Self.FK_Arac_UyeBilgi">
+      <End Role="UyeBilgi" EntitySet="UyeBilgi" />
+      <End Role="Arac" EntitySet="Arac" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Model_Marka" Association="Self.FK_Model_Marka">
+      <End Role="Marka" EntitySet="Marka" />
+      <End Role="Model" EntitySet="Model" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Odemeler_UyeBilgi" Association="Self.FK_Odemeler_UyeBilgi">
+      <End Role="UyeBilgi" EntitySet="UyeBilgi" />
+      <End Role="Odemeler" EntitySet="Odemeler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Onaylama_UyeBilgi" Association="Self.FK_Onaylama_UyeBilgi">
+      <End Role="UyeBilgi" EntitySet="UyeBilgi" />
+      <End Role="Onay" EntitySet="Onay" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Resim_Arac" Association="Self.FK_Resim_Arac">
+      <End Role="Arac" EntitySet="Arac" />
+      <End Role="Resim" EntitySet="Resim" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yolculuk_UyeBilgi" Association="Self.FK_Yolculuk_UyeBilgi">
+      <End Role="UyeBilgi" EntitySet="UyeBilgi" />
+      <End Role="Yolculuk" EntitySet="Yolculuk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yolculuk_UyeBilgi1" Association="Self.FK_Yolculuk_UyeBilgi1">
+      <End Role="UyeBilgi" EntitySet="UyeBilgi" />
+      <End Role="Yolculuk" EntitySet="Yolculuk" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

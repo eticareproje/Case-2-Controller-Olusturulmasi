@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RentACarModelStoreContainer" CdmEntityContainer="RentACarEntities">
+    <EntitySetMapping Name="Adres">
+      <EntityTypeMapping TypeName="RentACarModel.Adres">
+        <MappingFragment StoreEntitySet="Adres">
+          <ScalarProperty Name="AdresId" ColumnName="AdresId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="AdresTanimi" ColumnName="AdresTanimi" />
+          <ScalarProperty Name="Adres1" ColumnName="Adres" />
+          <ScalarProperty Name="Ulke" ColumnName="Ulke" />
+          <ScalarProperty Name="Sehir" ColumnName="Sehir" />
+          <ScalarProperty Name="Ilce" ColumnName="Ilce" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Arac">
+      <EntityTypeMapping TypeName="RentACarModel.Arac">
+        <MappingFragment StoreEntitySet="Arac">
+          <ScalarProperty Name="AracId" ColumnName="AracId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="XKoordinat" ColumnName="XKoordinat" />
+          <ScalarProperty Name="YKoordinat" ColumnName="YKoordinat" />
+          <ScalarProperty Name="MarkaId" ColumnName="MarkaId" />
+          <ScalarProperty Name="ModelId" ColumnName="ModelId" />
+          <ScalarProperty Name="Ucret" ColumnName="Ucret" />
+          <ScalarProperty Name="KM" ColumnName="KM" />
+          <ScalarProperty Name="Yakit" ColumnName="Yakit" />
+          <ScalarProperty Name="Kasa" ColumnName="Kasa" />
+          <ScalarProperty Name="Yil" ColumnName="Yil" />
+          <ScalarProperty Name="Vites" ColumnName="Vites" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="Goruntulenme" ColumnName="Goruntulenme" />
+          <ScalarProperty Name="OrtalamaPuan" ColumnName="OrtalamaPuan" />
+          <ScalarProperty Name="AracDurum" ColumnName="AracDurum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Marka">
+      <EntityTypeMapping TypeName="RentACarModel.Marka">
+        <MappingFragment StoreEntitySet="Marka">
+          <ScalarProperty Name="MarkaId" ColumnName="MarkaId" />
+          <ScalarProperty Name="AracMarka" ColumnName="AracMarka" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Model">
+      <EntityTypeMapping TypeName="RentACarModel.Model">
+        <MappingFragment StoreEntitySet="Model">
+          <ScalarProperty Name="ModelId" ColumnName="ModelId" />
+          <ScalarProperty Name="MarkaId" ColumnName="MarkaId" />
+          <ScalarProperty Name="ModelAd" ColumnName="ModelAd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Odemeler">
+      <EntityTypeMapping TypeName="RentACarModel.Odemeler">
+        <MappingFragment StoreEntitySet="Odemeler">
+          <ScalarProperty Name="OdemeId" ColumnName="OdemeId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="YolculukId" ColumnName="YolculukId" />
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Onay">
+      <EntityTypeMapping TypeName="RentACarModel.Onay">
+        <MappingFragment StoreEntitySet="Onay">
+          <ScalarProperty Name="OnayId" ColumnName="OnayId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="EhliyetResimYoluOn" ColumnName="EhliyetResimYoluOn" />
+          <ScalarProperty Name="EhliyetResimYoluArka" ColumnName="EhliyetResimYoluArka" />
+          <ScalarProperty Name="AdminOnay" ColumnName="AdminOnay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Resim">
+      <EntityTypeMapping TypeName="RentACarModel.Resim">
+        <MappingFragment StoreEntitySet="Resim">
+          <ScalarProperty Name="ResimId" ColumnName="ResimId" />
+          <ScalarProperty Name="AracId" ColumnName="AracId" />
+          <ScalarProperty Name="ResimYol" ColumnName="ResimYol" />
+          <ScalarProperty Name="Onay" ColumnName="Onay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="RentACarModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UyeBilgi">
+      <EntityTypeMapping TypeName="RentACarModel.UyeBilgi">
+        <MappingFragment StoreEntitySet="UyeBilgi">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Apikey" ColumnName="Apikey" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+          <ScalarProperty Name="DogumTarihi" ColumnName="DogumTarihi" />
+          <ScalarProperty Name="Sigara" ColumnName="Sigara" />
+          <ScalarProperty Name="ResimYol" ColumnName="ResimYol" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="TC" ColumnName="TC" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="UyeKayitTarihi" ColumnName="UyeKayitTarihi" />
+          <ScalarProperty Name="Deneyim" ColumnName="Deneyim" />
+          <ScalarProperty Name="YapilanYolculukSayisi" ColumnName="YapilanYolculukSayisi" />
+          <ScalarProperty Name="MusteriPuan" ColumnName="MusteriPuan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yolculuk">
+      <EntityTypeMapping TypeName="RentACarModel.Yolculuk">
+        <MappingFragment StoreEntitySet="Yolculuk">
+          <ScalarProperty Name="YolculukId" ColumnName="YolculukId" />
+          <ScalarProperty Name="AracSahipId" ColumnName="AracSahipId" />
+          <ScalarProperty Name="KiralayanId" ColumnName="KiralayanId" />
+          <ScalarProperty Name="AracId" ColumnName="AracId" />
+          <ScalarProperty Name="Yorum" ColumnName="Yorum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
